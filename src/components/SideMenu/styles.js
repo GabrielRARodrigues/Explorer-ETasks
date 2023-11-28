@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints'
 
 export const Container = styled.aside`
   grid-area: menu;
@@ -8,13 +9,18 @@ export const Container = styled.aside`
 
   display: flex;
   flex-direction: column;
-`;
+
+  @media screen and (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+    grid-area: none;
+    display: none;
+  }
+`
 
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 32px 24px;
-`;
+`
 
 export const Title = styled.h1`
   display: flex;
@@ -22,7 +28,7 @@ export const Title = styled.h1`
   gap: 7px;
   color: ${({ theme }) => theme.COLORS.BLUE_200};
   font-size: 24px;
-`;
+`
 
 export const Nav = styled.nav`
   display: flex;
@@ -38,12 +44,12 @@ export const Nav = styled.nav`
     height: 56px;
     font-size: 16px;
 
-    &[data-menu-active="true"] {
+    &[data-menu-active='true'] {
       background-color: ${({ theme }) => theme.COLORS.BLUE_200};
       color: ${({ theme }) => theme.COLORS.BLUE_600};
     }
   }
-`;
+`
 
 export const Footer = styled.footer`
   padding: 24px;
@@ -69,15 +75,14 @@ export const Footer = styled.footer`
   > div small {
     font-size: 12px;
   }
-`;
+`
 
 export const Button = styled.button`
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 
   > svg {
     font-size: 20px;
     color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
-`;
-
+`

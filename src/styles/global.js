@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
+import { DEVICE_BREAKPOINTS } from './deviceBreakpoints'
 
 export default createGlobalStyle`
   * {
@@ -7,6 +8,14 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    font-size: 16px;
+
+    @media screen and (max-width: ${DEVICE_BREAKPOINTS.MD}) {
+      font-size:  12px;
+    }
+  }
+  
   body {
     background-color: ${({ theme }) => theme.COLORS.GRAY_800};
     color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -16,7 +25,7 @@ export default createGlobalStyle`
 
   body, input, button, textarea {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     outline: none;
   }
 
@@ -34,7 +43,7 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.5rem;
   }
   
   ::-webkit-scrollbar-track {
@@ -44,4 +53,4 @@ export default createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     background-color: #09090A;
   }
-`;
+`
