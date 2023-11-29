@@ -12,8 +12,16 @@ export const Container = styled.header`
   border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.GRAY_500};
 
-  > h1 {
+  & > h1 {
     font-size: 2rem;
+  }
+
+  @media screen and (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+    & > h1 {
+      font-size: 1.5rem;
+      flex: 1;
+      padding: 0 1rem;
+    }
   }
 `
 export const Menu = styled.button`
@@ -24,6 +32,10 @@ export const Menu = styled.button`
   & > svg {
     font-size: 2.5rem;
     color: ${({ theme }) => theme.COLORS.BLUE_200};
+
+    @media screen and (max-width: ${DEVICE_BREAKPOINTS.XS}) {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (max-width: ${DEVICE_BREAKPOINTS.MD}) {
